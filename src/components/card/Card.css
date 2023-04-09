@@ -1,0 +1,29 @@
+.card {
+  width: 411px;
+  padding: 0 34px 43px;
+  border-radius: 20px;
+  box-shadow: -10px 7px 20px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: 343px;
+    padding: 0 11px 43px;
+  }
+}
+
+.card__logo {
+  display: block;
+  margin: 0px auto;
+}
+
+.card__title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #989898;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 48px;
+}
