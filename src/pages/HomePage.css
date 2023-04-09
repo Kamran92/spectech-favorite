@@ -1,0 +1,32 @@
+.wrap {
+  position: relative;
+}
+
+.front,
+.back {
+  position: absolute;
+  transition: 1s;
+  backface-visibility: hidden;
+  width: 411px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  top: 140px;
+}
+
+@media screen and (max-width: 480px) {
+  .front,
+  .back {
+    width: 343px;
+  }
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+.wrap--active .front {
+  transform: rotateY(180deg);
+}
+.wrap--active .back {
+  transform: rotateY(360deg);
+}
