@@ -89,7 +89,12 @@ export default function LoginForm({ phone, onSetPhone }) {
                 label="Забыли пароль?"
                 onClick={() => {
                   setSearchParams({ title: "restore-password" });
-                  resetForm();
+                  resetForm({
+                    values: {
+                      login: "",
+                      password: "",
+                    },
+                  });
                   onSetPhone("");
                 }}
                 type="button"
