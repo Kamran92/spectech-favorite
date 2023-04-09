@@ -1,0 +1,29 @@
+.field__title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #989898;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.field__input {
+  padding: 6px 14px;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+.field--focus .field__input {
+  border-color: #10100f;
+}
+
+.field--focus .field__title {
+  color: #10100f;
+}
+
+.field__error {
+  position: absolute;
+  font-size: 10px;
+  color: tomato;
+}
