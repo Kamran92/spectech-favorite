@@ -1,0 +1,18 @@
+.button {
+  background: #f2b705;
+  border-radius: 5px;
+  padding: 8px 0;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.button-link {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #f6b52e;
+  cursor: pointer;
+}
