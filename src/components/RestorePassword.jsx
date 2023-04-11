@@ -5,12 +5,12 @@ import Card from "~/components/card/Card";
 import List from "~/components/list/List";
 import Button from "~/components/button/Button";
 import RusMaskInput from "~/components/rus-mask-input/RusMaskInput";
+import { useState } from "react";
 
 export default function RestorePassword({ onSetPhone }) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const removeQueryTitle = () => {
-    setSearchParams(searchParams.delete("title"));
-  };
+  const [isShowPassword, setIsShowPassword] = useState(false);
+
   return (
     <Formik
       initialValues={{ phone: "" }}
@@ -23,10 +23,9 @@ export default function RestorePassword({ onSetPhone }) {
 
         return errors;
       }}
-      onSubmit={(values, actions) => {
+      onSubmit={(values) => {
         onSetPhone(values.phone);
-        removeQueryTitle();
-        actions.resetForm();
+        setIsShowPassword(true);
       }}
     >
       {({
@@ -45,6 +44,7 @@ export default function RestorePassword({ onSetPhone }) {
                 <RusMaskInput
                   title="Введите номер телефона"
                   onChange={(value) => {
+                    setIsShowPassword(false);
                     setFieldValue("phone", value);
                     setFieldTouched("phone", false, false);
                   }}
@@ -56,8 +56,9 @@ export default function RestorePassword({ onSetPhone }) {
               <Button
                 label="назад"
                 onClick={() => {
-                  removeQueryTitle();
+                  setSearchParams(searchParams.delete("title"));
                   resetForm();
+                  setIsShowPassword(false);
                 }}
                 className="button-link"
                 type="button"
@@ -67,6 +68,8 @@ export default function RestorePassword({ onSetPhone }) {
                   display: "flex",
                 }}
               />
+
+              {isShowPassword && <div>Пароль: 123456</div>}
               <Button label="позвонить" style={{ marginTop: "42px" }} />
             </form>
           </Card>
